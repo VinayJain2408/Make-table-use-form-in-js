@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table in js</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <form action="">
+            <input type="text" id="name" placeholder="Enter your Name"><span class="inr"></span><br>
+            <input type="text" id="age" placeholder="Enter your age"><span class="inr"></span><br>
+            <input type="text" id="phone" placeholder="Enter your phone"><span class="inr"></span><br>
+            <input type="text" id="email" placeholder="Enter your Email"><span class="inr"></span><br>
+            <input type="radio" class="Gender" id="male">Male
+            <input type="radio" class="Gender" id="Female">Female
+            <input type="radio" class="Gender" id="Other">Other
+            <span class="inr"></span><br>
+            <select name="City" id="hometown">
+                <option value="" selected disabled>Select city</option>
+                <option value="">Ajmer</option>
+                <option value="">Alwar</option>
+                <option value="">Bundi</option>
+                <option value="">jaipur</option>
+                <option value="">Kota</option>
+                <option value="">Udaipur</option>
+            </select>
+            <span class="inr"></span><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <table>
+            <tr>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>City</th>
+                <th>Active</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let form = document.querySelector("form")
+        let table = document.querySelector("table")
+
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            let name = document.querySelector("#name")
+            let age = document.querySelector("#age")
+            let phone = document.querySelector("#phone")
+            let email = document.querySelector("#email")
+            let radio = document.querySelectorAll(".gender")
+            let hometown = document.querySelector("#hometown")
+
+            // let data = {}
+            // data.name = name.value;
+            // data.age = age.value;
+            // data.phone = phone.value;
+            // data.email = email.value;
+
+            let tr = document.createElement("tr")
+
+            let td = document.createElement("td")
+            let add = table.insertAdjacentElement("beforeend", tr)
+            let app = add.appendChild(td)
+            app.innerHTML = ''
+
+
+            let td1 = document.createElement("td")
+            let add1 = table.insertAdjacentElement("beforeend", tr)
+            let app1 = add.appendChild(td1)
+            app1.innerHTML = name.value
+
+            let td2 = document.createElement("td")
+            let add2 = table.insertAdjacentElement("beforeend", tr)
+            let app2 = add.appendChild(td2)
+            app2.innerHTML = age.value
+
+            let td3 = document.createElement("td")
+            let add3 = table.insertAdjacentElement("beforeend", tr)
+            let app3 = add.appendChild(td3)
+            app3.innerHTML = phone.value
+
+            let td4 = document.createElement("td")
+            let add4 = table.insertAdjacentElement("beforeend", tr)
+            let app4 = add.appendChild(td4)
+            app4.innerHTML = email.value
+
+            for (let i = 0; i < radio.length; i++) {
+                if (radio[i].checked === true) {
+                    let td5 = document.createElement("td")
+                    let add5 = table.insertAdjacentElement("beforeend", tr)
+                    let app5 = add5.appendChild(td5)
+                    app5.innerHTML = radio[i].value
+                }
+
+            }
+            // let td5 = document.createElement("td")
+            // let add5 = table.insertAdjacentElement("beforeend", tr)
+            // let app5 = add.appendChild(td5)
+            // app5.innerHTML = gender.value
+
+            let td6 = document.createElement("td")
+            let add6 = table.insertAdjacentElement("beforeend", tr)
+            let app6 = add6.appendChild(td6)
+            app6.innerHTML = hometown.value
+
+        }
+
+    </script>
+</body>
+
+</html>
