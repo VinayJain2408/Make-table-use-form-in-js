@@ -59,6 +59,7 @@
             let radio = document.querySelectorAll(".gender")
             let hometown = document.querySelector("#hometown")
 
+          
             // let data = {}
             // data.name = name.value;
             // data.age = age.value;
@@ -69,9 +70,9 @@
 
             let td = document.createElement("td")
             let add = table.insertAdjacentElement("beforeend", tr)
-            let app = add.appendChild(td)
-            app.innerHTML = ''
-
+            tr = tr.appendChild(td)
+            
+        
 
             let td1 = document.createElement("td")
             let add1 = table.insertAdjacentElement("beforeend", tr)
@@ -93,24 +94,27 @@
             let app4 = add.appendChild(td4)
             app4.innerHTML = email.value
 
-            for (let i = 0; i < radio.length; i++) {
-                if (radio[i].checked === true) {
-                    let td5 = document.createElement("td")
-                    let add5 = table.insertAdjacentElement("beforeend", tr)
-                    let app5 = add5.appendChild(td5)
-                    app5.innerHTML = radio[i].value
-                }
+            // for (let i = 0; i < radio.length; i++) {
+            //     if (radio[i].checked === true) {
+            //         let td5 = document.createElement("td")
+            //         let add5 = table.insertAdjacentElement("beforeend", tr)
+            //         let app5 = add5.appendChild(td5)
+            //         app5.innerHTML = radio[i].value
+            //     }
 
-            }
-            // let td5 = document.createElement("td")
-            // let add5 = table.insertAdjacentElement("beforeend", tr)
-            // let app5 = add.appendChild(td5)
-            // app5.innerHTML = gender.value
+            // }
+            // // let td5 = document.createElement("td")
+            // // let add5 = table.insertAdjacentElement("beforeend", tr)
+            // // let app5 = add.appendChild(td5)
+            // // app5.innerHTML = gender.value
 
-            let td6 = document.createElement("td")
-            let add6 = table.insertAdjacentElement("beforeend", tr)
-            let app6 = add6.appendChild(td6)
-            app6.innerHTML = hometown.value
+            // let td6 = document.createElement("td")
+            // let add6 = table.insertAdjacentElement("beforeend", tr)
+            // let app6 = add6.appendChild(td6)
+            // app6.innerHTML = hometown.value
+
+
+            
 
         }
 
